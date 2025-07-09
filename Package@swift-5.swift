@@ -13,8 +13,14 @@ let package = Package(
     products: [
         .library(name: "XMLMapper", targets: ["XMLMapper"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/Alamofire/Alamofire.git", .exact("5.9.0"))
+    ],
     targets: [
-        .target(name: "XMLMapper", path: "./XMLMapper/Classes", exclude: ["Requests"]),
+        .target(name: "XMLMapper",
+                dependencies: ["Alamofire"],
+                path: "./XMLMapper/Classes",
+               ),
         .testTarget(name: "XMLMapperTests", dependencies: ["XMLMapper"], path: "./XMLMapperTests/Tests"),
     ],
     swiftLanguageVersions: [.v4, .v4_2, .v5]

@@ -8,7 +8,7 @@ let package = Package(
         .library(name: "XMLMapper", targets: ["XMLMapper"]),
     ],
     targets: [
-        .target(name: "XMLMapper", path: "./XMLMapper/Classes", exclude: ["Requests"]),
+        .target(name: "XMLMapper", path: "./XMLMapper/Classes"),
         .testTarget(name: "XMLMapperTests", dependencies: ["XMLMapper"], path: "./XMLMapperTests/Tests"),
     ],
     swiftLanguageVersions: [3, 4]
